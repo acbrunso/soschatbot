@@ -154,3 +154,15 @@ function checkNow(dateTimeStart, dateTimeEnd, appointment_type, agent) {
      });
    });
 }
+
+/***///
+function getMaps(agent) {
+  if(agent.parameters.map_types == "base") {
+      agent.add("https://www.google.com");
+  }
+  else if(agent.parameters.map_types.toLowerCase() == "SOS building".toLowerCase()) {
+    agent.add("<a href='https://www.yahoo.com'>Yahoo</a>");
+  } else {
+    agent.add("unaccounted for");
+  }
+}
